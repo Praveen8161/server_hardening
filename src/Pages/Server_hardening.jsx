@@ -1,39 +1,44 @@
 import { useState } from "react";
 import Side_Bar from "../Components/Side_Bar";
 import Top_Nav from "../Components/Top_Nav";
-import { FaInfoCircle } from "react-icons/fa";
+import Chart_section from "../Components/Chart_section";
+import Reports_component from "../Components/Reports_component";
+import Footer from "../Components/Footer";
 
 const Server_hardening = () => {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <div className=" flex flex-row ">
-      <div className=" min-h-[100vh] border-r-2 shadow-md min-w-[20%] max-w-max py-2 px-3">
-        <Side_Bar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-      </div>
-      <div className=" flex flex-col w-full">
-        <Top_Nav />
-        <main className=" px-10 flex flex-col gap-8">
-          <section>
-            {/*  */}
-            <div className=" flex flex-row justify-between items-center">
-              <p>server hardening</p>
-              <p>Date</p>
-            </div>
+      {/* Side Bar */}
+      {showSideBar && (
+        <div className=" min-h-[100vh] min-w-[20%] max-w-max py-2 px-3">
+          <Side_Bar />
+        </div>
+      )}
 
-            {/* Charts */}
-            <div className=" border py-2">
-              <div className=" flex justify-between flex-row items-center px-3 shadow-sm">
-                <p className=" text-xl font-bold text-sky-700">
-                  {" "}
-                  Overall Statistics
-                </p>
-                <p>
-                  <FaInfoCircle size={20} color="gray" />
-                </p>
-              </div>
-              <hr />
-            </div>
-          </section>
+      <div className=" flex flex-col w-full min-h-screen">
+        {/* Top Bar */}
+        <Top_Nav setShowSideBar={setShowSideBar} />
+
+        {/* Main Container */}
+        <main className=" px-10 flex flex-col gap-6 bg-slate-200 pt-6 flex-grow pb-5">
+          <div className=" flex flex-row justify-between items-center">
+            <p className=" font-bold text-lg">server hardening</p>
+            <p>Date</p>
+          </div>
+
+          {/* Chart Section */}
+          <>
+            <Chart_section />
+          </>
+
+          <>
+            <Reports_component />
+          </>
+
+          <>
+            <Footer />
+          </>
         </main>
       </div>
     </div>
