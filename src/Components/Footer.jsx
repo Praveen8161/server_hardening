@@ -20,7 +20,7 @@ const Footer = () => {
           <span>Privacy policy</span>
         </p>
       </div>
-      <hr className="bg-gray-300 h-[2px] mt-6" />
+      <hr className="bg-gray-300 h-[3px] mt-6" />
       <div className=" flex flex-row justify-between">
         <p className=" flex flex-row gap-3 items-center">
           <span>

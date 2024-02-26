@@ -24,13 +24,13 @@ const Reports_component = () => {
           <input
             type="search"
             placeholder="Search"
-            className=" py-1 min-w-full pl-8 flex-1"
+            className=" py-1 min-w-full pl-8 flex-1 rounded-lg"
           />{" "}
         </div>
 
         <div className="flex flex-row items-center gap-3 flex-wrap">
           {/* Date picker-- Start */}
-          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md">
+          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
             <span>
               <FiFilter />
             </span>
@@ -38,7 +38,7 @@ const Reports_component = () => {
           </div>
           <span>to </span>
           {/* Date picker -end */}
-          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md">
+          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
             <span>
               <FiFilter />
             </span>
@@ -52,7 +52,7 @@ const Reports_component = () => {
               id="HeadlineAct"
               value={selectValue}
               onChange={(e) => setSelectValue(e.target.value)}
-              className=" w-full border-gray-300 text-gray-700 self-center px-2 rounded-md py-[1px]"
+              className=" w-full border-gray-300 text-gray-700 self-center px-2 rounded-md py-1"
             >
               <option value="network">Network</option>
               <option value="safety">Safety</option>
