@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Side_Nav from "../Components/Side_Nav";
+import Side_Bar from "../Components/Side_Bar";
 import Top_Nav from "../Components/Top_Nav";
 import { FaInfoCircle } from "react-icons/fa";
 
@@ -8,7 +8,7 @@ const Server_hardening = () => {
   return (
     <div className=" flex flex-row ">
       <div className=" min-h-[100vh] border-r-2 shadow-md min-w-[20%] max-w-max py-2 px-3">
-        <Side_Nav showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+        <Side_Bar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       </div>
       <div className=" flex flex-col w-full">
         <Top_Nav />

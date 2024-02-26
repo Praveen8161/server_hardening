@@ -2,7 +2,7 @@ import { MdDashboard } from "react-icons/md";
 import { FiPlusCircle } from "react-icons/fi";
 import { IoLogOutOutline } from "react-icons/io5";
 
-const Side_Nav = () => {
+const Side_Bar = () => {
   return (
     <section className=" flex flex-col gap-4">
       <div className=" flex flex-col gap-3">
@@ -87,4 +87,4 @@ const Side_Nav = () => {
   );
 };
 
-export default Side_Nav;
+export default Side_Bar;
