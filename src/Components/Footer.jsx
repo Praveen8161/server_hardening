@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
 
       <div className=" flex flex-row justify-between items-center">
-        <p className=" max-w-[500px]">
+        <p className=" max-w-[500px] font-light">
           Necurity Solutions is a holistic information technology security
           solution provider. We focus on providing innovative security
           solutions, to ensure the value of your digital assets.
@@ -36,7 +36,7 @@ const Footer = () => {
           </span>
         </p>
 
-        <p className=" text-xs">
+        <p className=" text-sm">
           Copyright 2024, All Rights Reserved by necurities
         </p>
       </div>

@@ -3,14 +3,21 @@ import { CiSearch } from "react-icons/ci";
 import { FiFilter } from "react-icons/fi";
 import { cardData } from "../helpers/Report_card_data";
 import Report_cards from "./Report_cards";
+import DatePicker from "react-datepicker";
 
 const Reports_component = () => {
   const [selectValue, setSelectValue] = useState("network");
+  const [dateValue, setDateValue] = useState({
+    start: new Date(),
+    end: new Date(),
+  });
   return (
     <section className=" flex flex-col gap-8">
       {/* Section Heading */}
       <div>
-        <p className=" text-2xl font-bold">SERVER HARDENING Reports</p>
+        <p className=" text-2xl font-bold text-sky-700 ">
+          SERVER HARDENING Reports
+        </p>
         <p>Manage your report details</p>
       </div>
 
@@ -31,18 +38,41 @@ const Reports_component = () => {
         <div className="flex flex-row items-center gap-3 flex-wrap">
           {/* Date picker-- Start */}
           <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
-            <span>
-              <FiFilter />
-            </span>
-            <input type="date" />
+            <DatePicker
+              showPopperArrow={false}
+              closeOnScroll={true}
+              icon={<FiFilter />}
+              showIcon
+              toggleCalendarOnIconClick
+              selected={dateValue.start}
+              onChange={(date) => {
+                setDateValue((prev) => ({
+                  ...prev,
+                  start: date,
+                }));
+              }}
+            />
           </div>
-          <span>to </span>
+
+          {/*  */}
+          <span>to</span>
+
           {/* Date picker -end */}
           <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
-            <span>
-              <FiFilter />
-            </span>
-            <input type="date" />
+            <DatePicker
+              showPopperArrow={false}
+              closeOnScroll={true}
+              icon={<FiFilter />}
+              showIcon
+              toggleCalendarOnIconClick
+              selected={dateValue.end}
+              onChange={(date) => {
+                setDateValue((prev) => ({
+                  ...prev,
+                  end: date,
+                }));
+              }}
+            />
           </div>
 
           {/* Select  */}
