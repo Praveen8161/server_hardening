@@ -81,6 +81,7 @@ const Side_Bar = () => {
             </li>
           </ul>
         </div>
+
         {/* Logout */}
         <div className="flex flex-row items-center gap-3 mt-8 cursor-pointer flex-nowrap">
           <span>
