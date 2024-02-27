@@ -12,32 +12,32 @@ const Reports_component = () => {
     end: new Date(),
   });
   return (
-    <section className=" flex flex-col gap-8">
+    <section className="flex flex-col gap-8 ">
       {/* Section Heading */}
       <div>
-        <p className=" text-2xl font-bold text-sky-700 ">
+        <p className="text-2xl font-bold text-sky-700">
           SERVER HARDENING Reports
         </p>
         <p>Manage your report details</p>
       </div>
 
       {/* Filters container*/}
-      <div className=" flex flex-row items-center justify-between flex-wrap gap-3">
+      <div className="flex flex-row flex-wrap items-center justify-between gap-3 ">
         {/* Search */}
         <div className="flex flex-row gap-1 flex-nowrap items-center bg-white w-full max-w-[500px] relative ">
-          <span className=" absolute left-2">
+          <span className="absolute left-2">
             <CiSearch size={15} />
           </span>
           <input
             type="search"
             placeholder="Search"
-            className=" py-1 min-w-full pl-8 flex-1 rounded-lg"
+            className="flex-1 min-w-full py-1 pl-8 rounded-lg "
           />{" "}
         </div>
 
-        <div className="flex flex-row items-center gap-3 flex-wrap">
+        <div className="flex flex-row flex-wrap items-center gap-3">
           {/* Date picker-- Start */}
-          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
+          <div className="flex flex-row items-center px-2 bg-white rounded-md date-input-wrapper">
             <DatePicker
               showPopperArrow={false}
               closeOnScroll={true}
@@ -58,7 +58,7 @@ const Reports_component = () => {
           <span>to</span>
 
           {/* Date picker -end */}
-          <div className="date-input-wrapper flex flex-row items-center bg-white px-2 rounded-md py-1">
+          <div className="flex flex-row items-center px-2 bg-white rounded-md date-input-wrapper">
             <DatePicker
               showPopperArrow={false}
               closeOnScroll={true}
@@ -82,7 +82,7 @@ const Reports_component = () => {
               id="HeadlineAct"
               value={selectValue}
               onChange={(e) => setSelectValue(e.target.value)}
-              className=" w-full border-gray-300 text-gray-700 self-center px-2 rounded-md py-1"
+              className="self-center w-full px-2 py-1 text-gray-700 border-gray-300 rounded-md "
             >
               <option value="network">Network</option>
               <option value="safety">Safety</option>
@@ -92,7 +92,7 @@ const Reports_component = () => {
         </div>
       </div>
 
-      <div className=" flex flex-row gap-5 flex-wrap">
+      <div className="flex flex-row flex-wrap gap-5 ">
         {cardData.length &&
           cardData?.map((card, idx) => (
             <Report_cards key={card.title + idx} card={card} />
