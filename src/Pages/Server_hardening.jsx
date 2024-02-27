@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Side_Bar from "../Components/Side_Bar";
 import Top_Nav from "../Components/Top_Nav";
 import Chart_section from "../Components/Chart_section";
@@ -9,23 +9,42 @@ import DatePicker from "react-datepicker";
 const Server_hardening = () => {
   const [showSideBar, setShowSideBar] = useState(false);
   const [month, setMonth] = useState(new Date());
+  const sideBarRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
+      setShowSideBar(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className=" flex flex-row max-w-[100vw]">
       {/* Side Bar */}
       {showSideBar && (
-        <div className=" min-w-[20%] max-w-max py-2 px-3 lg:static top-0 -bottom-1 absolute bg-white min-h-screen max-h-max flex-grow z-10">
+        <div
+          ref={sideBarRef}
+          className=" min-w-[20%] max-w-[80%] sm:max-w-max py-2 px-3 lg:static top-0 bottom-0 fixed bg-white min-h-screen max-h-max flex-grow z-10"
+        >
           <Side_Bar />
         </div>
       )}
 
-      <div className=" flex flex-col w-full min-h-screen">
+      <div className="flex flex-col w-full min-h-screen ">
         {/* Top Bar */}
         <Top_Nav setShowSideBar={setShowSideBar} />
 
         {/* Main Container */}
-        <main className=" px-2 md:px-10 flex flex-col gap-6 bg-slate-200 pt-6 flex-grow pb-5">
-          <div className=" flex flex-row justify-between items-center">
-            <p className=" font-bold text-lg">server hardening</p>
+        <main className="flex flex-col flex-grow gap-6 px-2 pt-6 pb-5 md:px-10 bg-slate-200">
+          <div className="flex flex-row items-center justify-between ">
+            <p className="text-lg font-bold ">server hardening</p>
             <div>
               {" "}
               <DatePicker
