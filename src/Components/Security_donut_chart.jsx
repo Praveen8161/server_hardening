@@ -14,7 +14,16 @@ const Security_donut_chart = () => {
           <FaInfoCircle size={20} color="gray" />
         </p>
       </div>
-      <div className="max-h-[90vh] md:max-h-[50vh] min-w-full flex flex-row justify-center gap-5">
+      <div className="max-h-[90vh] md:max-h-[50vh] min-w-full flex flex-row justify-center gap-5 relative ">
+        <div className="absolute text-2xl px-3 py-[16px] bg-white rounded-full shadow-md -bottom-3 left-[20%]">
+          65%
+        </div>
+        <div className="absolute text-2xl px-3 py-[16px] bg-white rounded-full shadow-md top-[55%] left-[50%]">
+          20%
+        </div>
+        <div className="absolute text-2xl px-3 py-[16px] bg-white rounded-full shadow-lg top-2 left-[40%]">
+          15%
+        </div>
         <>
           <Doughnut
             options={{
@@ -28,7 +37,7 @@ const Security_donut_chart = () => {
               labels: ["High", "Medium", "Low"],
               datasets: [
                 {
-                  data: [12, 19, 3],
+                  data: [15, 20, 65],
                   backgroundColor: ["red", "#d6d658", "#53c153"],
                   borderColor: ["red", "#d6d658", "#53c153"],
                   borderWidth: 1,
