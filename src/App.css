@@ -1,0 +1,14 @@
+input[type="range"].range {
+  background-color: red;
+}
+
+input[type="range"].range::-webkit-slider-thumb {
+  min-height: 25px;
+  min-width: 25px;
+  border-radius: 9999px;
+}
+
+input[type="range"].range::-webkit-slider-runnable-track {
+  /* background-color: #60aed5; */
+  border-radius: 50px;
+}

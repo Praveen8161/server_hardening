@@ -1,8 +1,10 @@
 import { MdDashboard } from "react-icons/md";
 import { FiPlusCircle } from "react-icons/fi";
 import { IoLogOutOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Side_Bar = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col gap-4 py-4 ">
       <div className="flex flex-col gap-3 ">
@@ -31,7 +33,9 @@ const Side_Bar = () => {
             <li className="cursor-pointer ">Web Security</li>
             <li className="cursor-pointer ">Phishing and simulation</li>
             <li className="cursor-pointer ">dark Web</li>
-            <li className="cursor-pointer ">Server Hardening</li>
+            <li onClick={() => navigate("/server")} className="cursor-pointer ">
+              Server Hardening
+            </li>
             <li className="cursor-pointer ">SOC</li>
             <li className="cursor-pointer ">
               External Attack Surface Monitoring
@@ -72,7 +76,10 @@ const Side_Bar = () => {
               </span>
               <span>Account settings</span>
             </li>
-            <li className="flex flex-row items-center gap-2 cursor-pointer flex-nowrap">
+            <li
+              onClick={() => navigate("/feedback")}
+              className="flex flex-row items-center gap-2 cursor-pointer flex-nowrap"
+            >
               {" "}
               <span className="ml-2 ">
                 <FiPlusCircle size={20} />
