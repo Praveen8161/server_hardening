@@ -3,7 +3,7 @@ import Side_Bar from "../Components/Side_Bar";
 import Top_Nav from "../Components/Top_Nav";
 
 const FeedBackPage = () => {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const [showSideBar, setShowSideBar] = useState(true);
   const sideBarRef = useRef(null);
   const [sliderValue, setSliderValue] = useState(5);
   const handleSliderChange = (e) => {

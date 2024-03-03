@@ -1,17 +1,32 @@
 import { FaInfoCircle } from "react-icons/fa";
-import { Chart as ChartJS } from "chart.js/auto";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { labels, options } from "../helpers/ChartsData";
-
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 const Chart_section = () => {
   return (
-    <section className=" shadow-lg bg-white rounded-lg px-4 py-2">
+    <section className="px-4 py-2 bg-white rounded-lg shadow-lg ">
       {/*  */}
 
       {/* Charts heading */}
       <div className="py-10">
-        <div className=" flex justify-between flex-row items-center">
-          <p className=" text-xl font-bold text-sky-700"> Overall Statistics</p>
+        <div className="flex flex-row items-center justify-between ">
+          <p className="text-xl font-bold text-sky-700"> Overall Statistics</p>
           <p>
             <FaInfoCircle size={20} color="gray" />
           </p>

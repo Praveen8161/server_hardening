@@ -28,9 +28,18 @@ const Side_Bar = () => {
         <div>
           <p className="mb-2 font-semibold ">Solutions</p>
           <ul className="flex flex-col gap-4 px-3">
-            <li className="cursor-pointer ">Network Security</li>
-            <li className="cursor-pointer ">API Security</li>
-            <li className="cursor-pointer ">Web Security</li>
+            <li
+              onClick={() => navigate("/network")}
+              className="cursor-pointer "
+            >
+              Network Security
+            </li>
+            <li onClick={() => navigate("/api")} className="cursor-pointer ">
+              API Security
+            </li>
+            <li onClick={() => navigate("/web")} className="cursor-pointer ">
+              Web Security
+            </li>
             <li className="cursor-pointer ">Phishing and simulation</li>
             <li className="cursor-pointer ">dark Web</li>
             <li onClick={() => navigate("/server")} className="cursor-pointer ">

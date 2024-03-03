@@ -7,7 +7,7 @@ import Footer from "../Components/Footer";
 import DatePicker from "react-datepicker";
 
 const Server_hardening = () => {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const [showSideBar, setShowSideBar] = useState(true);
   const [month, setMonth] = useState(new Date());
   const sideBarRef = useRef(null);
 

@@ -5,9 +5,13 @@ import Top_Nav from "./Top_Nav";
 import DatePicker from "react-datepicker";
 import Footer from "./Footer";
 import Security_reports from "./Security_reports";
+import Security_Data_Display from "./Security_Data_Display";
+import Security_Bar_Chart from "./Security_Bar_Chart";
+import Security_donut_chart from "./Security_donut_chart";
+import Security_overallCharts from "./Security_overallCharts";
 
 const Security = ({ name }) => {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const [showSideBar, setShowSideBar] = useState(true);
   const [month, setMonth] = useState(new Date());
   const sideBarRef = useRef(null);
 
@@ -43,7 +47,7 @@ const Security = ({ name }) => {
 
         {/* Main Container */}
         <main className="flex flex-col flex-grow gap-6 px-2 pt-6 pb-5 md:px-10 bg-slate-200">
-          {/* Charts */}
+          {/* Header */}
           <div className="flex flex-row items-center justify-between ">
             <p className="text-lg font-bold ">{name}</p>
             <div>
@@ -59,6 +63,18 @@ const Security = ({ name }) => {
                 popperPlacement="right"
               />{" "}
             </div>
+          </div>
+
+          {/* Security Data Display */}
+          <Security_Data_Display />
+
+          {/* security Charts Bar Type */}
+          <Security_Bar_Chart name={name} />
+
+          {/* security Circle Chart */}
+          <div className="flex flex-row gap-8 ">
+            <Security_donut_chart />
+            <Security_overallCharts />
           </div>
 
           {/* Reports */}
