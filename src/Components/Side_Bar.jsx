@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Side_Bar = () => {
   const navigate = useNavigate();
   return (
-    <section className="flex flex-col gap-4 py-4 " dir="rtl">
+    <section className="flex flex-col gap-4 py-4 ">
       <div className="flex flex-col gap-3 ">
         <div className="flex justify-center flex-1 w-full mb-5 ">
           <img
