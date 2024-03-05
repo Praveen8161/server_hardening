@@ -23,14 +23,14 @@ ChartJS.register(
 
 const Security_Bar_Chart = ({ name }) => {
   return (
-    <section className="px-4 py-2 bg-white rounded-lg shadow-lg ">
+    <section className="px-10 py-2 bg-white rounded-lg shadow-lg ">
       {/*  */}
 
       {/* Charts heading */}
-      <div className="py-10">
+      <div className="pt-10 pb-5">
         <div className="flex flex-col gap-3 ">
           <p className="text-xl font-bold "> {name}</p>
-          <p>Reports</p>
+          <p className="text-lg text-gray-500 ">Reports</p>
         </div>
       </div>
       <hr className="mb-5" />

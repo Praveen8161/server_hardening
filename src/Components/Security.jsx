@@ -72,7 +72,7 @@ const Security = ({ name }) => {
           <Security_Bar_Chart name={name} />
 
           {/* security Circle Chart */}
-          <div className="flex flex-row gap-8 ">
+          <div className="flex flex-row justify-between gap-8 ">
             <Security_donut_chart />
             <Security_overallCharts />
           </div>

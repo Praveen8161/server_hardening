@@ -6,7 +6,7 @@ const Security_overallCharts = () => {
   const [selectValue, setSelectValue] = useState("Jan");
 
   return (
-    <div className=" max-w-[30%] rounded-lg bg-white w-full px-4 py-5 flex flex-col gap-5">
+    <div className=" max-w-[35%] rounded-lg bg-white w-full px-16 py-5 flex flex-col gap-5">
       <div className="flex flex-row justify-between gap-3">
         <span className="text-xl font-bold ">Overall Attacks</span>
         {/* Select  */}
